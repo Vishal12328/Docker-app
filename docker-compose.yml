@@ -27,20 +27,6 @@ services:
       - mongodb
     networks:
       - mongo-network
-
-  web:
-    build: .
-    ports:
-      - "3000:3000"
-    environment:
-      - MONGODB_URI=mongodb://admin:admin@mongodb:27017/
-    depends_on:
-      - mongodb
-    networks:
-      - mongo-network
-    volumes:
-      - .:/app
-
 networks:
   mongo-network:
     driver: bridge
